@@ -8,10 +8,14 @@ function App() {
   const [model, setModel] = useState('')
   const [price, setPrice] = useState('')
 
-  let handleSubmit = async (e)=>{
+  let handleSubmit = (e)=>{
+    console.log("click")
     e.preventDefault()
-    let data =await axios.post("http://localhost:8000/")
-    console.log(data)
+    let {data} = axios.post("http://localhost:8000/",{
+      name: brand,
+      brand: model,
+      price: price
+    })
   }
 
 
